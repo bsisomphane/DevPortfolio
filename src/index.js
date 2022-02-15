@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Contact from './componets/Contact';
+import Skills from './componets/Skills';
+import Second from './componets/Second';
+import Header from './componets/Header';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+
+  <Router>
+    <Header />
+    <Routes>
+      <Route path='/' element={<App/>}/>
+      <Route path='/contact' element={<Contact/>}/>
+      <Route path='/skills' element={<Skills/>}/>
+      <Route path='/second' element={<Second/>}/>
+    </Routes>
+  </Router>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
